@@ -2,41 +2,69 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>포스터 페이지 2</title>
+  <title>피아노 리사이틀 – 두 번째 페이지</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      margin-top: 50px;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      perspective: 1000px; /* 3D 입체감 */
+      background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+      background-size: 400% 400%;
+      animation: bg-move 15s ease infinite;
     }
-    img {
-      max-width: 90%;   /* 화면 폭의 90%까지만 */
+
+    @keyframes bg-move {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .poster-3d {
+      max-width: 90%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+      transform-style: preserve-3d;
+      animation: rotate3d 20s linear infinite; /* 천천히 회전 */
     }
+
+    @keyframes rotate3d {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .poster-3d:hover {
+      transform: rotateY(360deg) scale(1.05); /* 확대만 적용 */
+    }
+
     button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
+      margin-top: 30px;
+      padding: 16px 32px;
+      font-size: 20px;
+      font-weight: 700;
       border: none;
-      background: #2196F3;   /* 기본 파랑 */
+      background: #FF5722;
       color: white;
-      border-radius: 8px;
+      border-radius: 14px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
     }
 
     button:hover {
-      background: #1976D2;   /* hover 시 진한 파랑 */
+      background: #E64A19;
+      transform: translateY(-3px) scale(1.05);
     }
-
   </style>
 </head>
 <body>
-  <img src="poster2.png" alt="포스터 2">
-  <br>
-  <button onclick="alert('예매 불가! 전 석 매진입니다! 그냥 멀리서 응원만 해주세요!')">진짜 예매하기</button>
+  <img src="poster2.png" alt="포스터 2" class="poster-3d">
+  <button onclick="alert('예매 불가! 아쉽지만 전 석 매진입니다. 부디 마음속으로 응원 부탁드려요. 다음에 또 기회가 있을겁니다!')">진짜 예매하기</button>
 </body>
 </html>
-  
