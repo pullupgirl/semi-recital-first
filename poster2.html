@@ -10,29 +10,33 @@
       margin-top: 50px;
     }
     img {
-      width: 300px;
+      max-width: 90%;   /* 화면 폭의 90%까지만 */
+      height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     button {
       margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px 24px;
+      font-size: 18px;
       border: none;
-      background: #f44336;
+      background: #2196F3;   /* 기본 파랑 */
       color: white;
       border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
+
     button:hover {
-      background: #d32f2f;
+      background: #1976D2;   /* hover 시 진한 파랑 */
     }
+
   </style>
 </head>
 <body>
-  <h1>포스터 2</h1>
   <img src="poster2.png" alt="포스터 2">
   <br>
-  <button onclick="alert('예매 불가!')">진짜 예매하기</button>
+  <button onclick="alert('예매 불가! 전 석 매진입니다! 그냥 멀리서 응원만 해주세요!')">진짜 예매하기</button>
 </body>
 </html>
+  
