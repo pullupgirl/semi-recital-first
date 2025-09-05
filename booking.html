@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콘서트 예매</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="poster2.png" alt="콘서트 포스터" class="poster rotating">
+        <button class="booking-btn real" onclick="showPopup()">진짜 예매하기</button>
+        <button class="logout-btn" onclick="logout()">로그아웃</button>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>아이고~! 예매 불가! 아쉽지만 전석 매진입니다. 부디 마음속으로 응원 부탁드려요. 다음에 또 기회가 있을 겁니다!</p>
+            <button onclick="closePopup()">확인</button>
+        </div>
+    </div>
+
+    <script>
+        if (!localStorage.getItem('loggedIn')) {
+            location.href = 'login.html';
+        }
+        
+        function showPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
